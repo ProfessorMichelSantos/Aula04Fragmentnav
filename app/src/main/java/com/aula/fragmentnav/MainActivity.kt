@@ -15,12 +15,16 @@ class MainActivity : AppCompatActivity() {
         val botaoback : ImageButton = findViewById(R.id.imageButton2)
 
         botaonext.setOnClickListener{
-            findNavController(R.id.fragmentContainer).navigate(R.id.navegarparade1para2)
+            val bundle = Bundle()
+            bundle.putString("menu", "1")
+            findNavController(R.id.fragmentContainer).navigate(R.id.navegarparade1para2, bundle)
 
         }
 
         botaoback.setOnClickListener{
-            findNavController(R.id.fragmentContainer).navigate(R.id.navegarde2para1)
+            val bundle = Bundle()
+            bundle.putString("menu", "2")
+            findNavController(R.id.fragmentContainer).navigate(R.id.navegarde2para1, bundle)
         }
     }
 
